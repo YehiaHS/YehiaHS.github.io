@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/portfolio/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yehia Salem — Creative Portfolio</title>
+    <meta name="description" content="Portfolio of Yehia Hatem Salah Salem — multidisciplinary designer, creative technologist, and dual-degree student at the British University in Egypt." />
+    <script>
+      (function() {
+        const r = sessionStorage.getItem('redirect');
+        if (r && r !== window.location.href) {
+          sessionStorage.removeItem('redirect');
+          window.history.replaceState(null, null, r);
+        }
+        const q = window.location.search;
+        if (q.startsWith('?p=')) {
+          const p = q.slice(3);
+          window.history.replaceState(null, null, window.location.pathname.replace(/\/$/, '') + p + window.location.hash);
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/portfolio/assets/index-KnLnD-p2.js"></script>
+    <link rel="stylesheet" crossorigin href="/portfolio/assets/index-BmFTd6-r.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
