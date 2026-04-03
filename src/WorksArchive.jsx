@@ -103,6 +103,19 @@ const categories = [
     ],
   },
   {
+    id: 'code',
+    label: 'Code Projects',
+    description: 'Web apps, mobile PWAs, and full-stack projects',
+    items: [
+      { src: '/portfolio/code-projects/salam_desktop.png', caption: 'Salam — Prayer Tracker & Islamic Toolkit' },
+      { src: '/portfolio/code-projects/salam_mobile.png', caption: 'Salam — Mobile PWA Experience' },
+      { src: '/portfolio/code-projects/42pedia_desktop.png', caption: '4²pedia — Custom Wikipedia Encyclopedia' },
+      { src: '/portfolio/code-projects/42pedia_mobile.png', caption: '4²pedia — Mobile View' },
+      { src: '/portfolio/code-projects/streamer_desktop.png', caption: 'Streamer — Movie & TV Streaming Platform' },
+      { src: '/portfolio/code-projects/streamer_mobile.png', caption: 'Streamer — Mobile Interface' },
+    ],
+  },
+  {
     id: 'bisco',
     label: 'Bisco Misr France',
     description: 'Crisis communication campaign — storyboards, strategy, and cultural presentation',

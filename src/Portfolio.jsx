@@ -963,16 +963,29 @@ function Portfolio() {
       {/* ───── FIXED TOP BAR ───── */}
       <div className="fixed top-0 left-0 right-0 z-50">
         <div className="mx-auto max-w-7xl px-6 md:px-12 py-4 flex items-center justify-between">
-          <Link
-            to="/"
-            className="flex items-center gap-3 font-display italic text-xl hover:transition-colors"
-            style={{ color: '#0d1a0f' }}
-            onMouseEnter={(e) => { e.currentTarget.style.color = '#4a8f5c' }}
-            onMouseLeave={(e) => { e.currentTarget.style.color = '#0d1a0f' }}
-          >
-            <span className="text-lg" style={{ color: '#4a8f5c' }}>&larr;</span>
-            {t('home')}
-          </Link>
+          <div className="flex items-center gap-5">
+            <Link
+              to="/"
+              className="flex items-center gap-3 font-display italic text-xl hover:transition-colors whitespace-nowrap"
+              style={{ color: '#0d1a0f' }}
+              onMouseEnter={(e) => { e.currentTarget.style.color = '#4a8f5c' }}
+              onMouseLeave={(e) => { e.currentTarget.style.color = '#0d1a0f' }}
+            >
+              <span className="text-lg" style={{ color: '#4a8f5c' }}>&larr;</span>
+              {t('home')}
+            </Link>
+            <span className="hidden md:block w-px h-4" style={{ backgroundColor: '#2d5a3d20' }} />
+            <Link
+              to="/works"
+              className="hidden md:flex items-center gap-2 font-display text-sm tracking-wide hover:transition-colors whitespace-nowrap"
+              style={{ color: '#2d5a3d80' }}
+              onMouseEnter={(e) => { e.currentTarget.style.color = '#4a8f5c' }}
+              onMouseLeave={(e) => { e.currentTarget.style.color = '#2d5a3d80' }}
+            >
+              Archive
+              <span className="text-xs" style={{ color: '#4a8f5c' }}>&rarr;</span>
+            </Link>
+          </div>
 
           {/* Page indicator */}
           <div className="flex items-center gap-3">
