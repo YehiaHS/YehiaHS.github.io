@@ -54,6 +54,7 @@ const Nav = () => {
           <a href="#about" className="page-number hover:text-accent transition-colors hidden md:inline-block">{t('aboutLabel')}</a>
           <a href="#skills" className="page-number hover:text-accent transition-colors hidden md:inline-block">{t('skillsTitle')}</a>
           <a href="#awards" className="page-number hover:text-accent transition-colors hidden md:inline-block">{t('awardsTitle')}</a>
+          <Link to="/works" className="page-number hover:text-accent transition-colors">Works</Link>
           <Link to="/portfolio" className="page-number hover:text-accent transition-colors">{t('viewPortfolio')}</Link>
           <Link to="/behind-the-scenes" className="page-number hover:text-accent transition-colors hidden md:inline-block">Behind the Scenes</Link>
           <LanguageSelector />
