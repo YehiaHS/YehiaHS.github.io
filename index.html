@@ -1,107 +1,28 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Crypto Heist Simulation</title>
-	<style>
-		body {
-			font-family: Arial, sans-serif;
-			text-align: center;
-			padding: 20px;
-			background-color: #1a1a1a;
-			color: #ffffff;
-		}
-		#game-container {
-			max-width: 600px;
-			margin: 0 auto;
-			background-color: #2d2d2d;
-			padding: 20px;
-			border-radius: 10px;
-			box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-		}
-		#game-text {
-			margin-bottom: 20px;
-			font-size: 18px;
-		}
-		.option {
-			display: inline-block;
-			margin: 10px;
-			padding: 10px 20px;
-			background-color: #4caf50;
-			color: #ffffff;
-			border-radius: 5px;
-			cursor: pointer;
-			transition: background-color 0.3s ease;
-		}
-		.option:hover {
-			background-color: #388e3c;
-		}
-		#score {
-			margin-top: 20px;
-			font-size: 20px;
-			font-weight: bold;
-		}
-	</style>
-</head>
-<body>
-	<div id="game-container">
-		<h1>Crypto Heist Simulation</h1>
-		<div id="game-text">You are a skilled hacker who has discovered a vulnerability in a major Japanese cryptocurrency exchange. What do you do?</div>
-		<div id="options">
-			<span class="option" onclick="updateGame(1, 50)">Exploit the vulnerability and steal the crypto assets</span>
-			<span class="option" onclick="updateGame(2, 100)">Report the vulnerability to the exchange and wait for a bug bounty</span>
-			<span class="option" onclick="updateGame(3, 0)">Ignore the vulnerability and move on</span>
-		</div>
-		<div id="score">Score: 0</div>
-	</div>
-
-	<script>
-		let score = 0;
-
-		function updateGame(choice, points) {
-			const gameText = document.getElementById('game-text');
-			const options = document.getElementById('options');
-			const scoreDisplay = document.getElementById('score');
-
-			if (choice === 1) {
-				gameText.innerHTML = "You successfully exploited the vulnerability and stole $100 million worth of cryptocurrencies. However, the authorities are now hot on your trail. What's your next move?";
-				options.innerHTML = '<span class="option" onclick="updateGame(4, 25)">Try to cover your tracks and launder the stolen assets</span><span class="option" onclick="updateGame(5, 75)">Negotiate with the exchange and return the assets for a reduced sentence</span>';
-				score += points;
-				scoreDisplay.innerHTML = `Score: ${score}`;
-			} else if (choice === 2) {
-				gameText.innerHTML = "You reported the vulnerability to the exchange and waited for a bug bounty. After several months, they offer you a reward of $10,000. Are you satisfied with this outcome?";
-				options.innerHTML = '<span class="option" onclick="endGame(true, 100, \'You did the right thing by responsibly disclosing the vulnerability and accepting the bug bounty reward.\')">Yes, I did the right thing</span><span class="option" onclick="endGame(false, 50, \'You missed out on a big payday, but at least you stayed out of trouble.\')">No, I should have exploited the vulnerability for a bigger payout</span>';
-				score += points;
-				scoreDisplay.innerHTML = `Score: ${score}`;
-			} else if (choice === 3) {
-				gameText.innerHTML = "You ignored the vulnerability and moved on. Several months later, you learn that the exchange was hacked, and $100 million was stolen. Do you regret your decision?";
-				options.innerHTML = '<span class="option" onclick="endGame(false, 0, \'You missed a major opportunity and the exchange suffered a massive loss due to your inaction.\')">Yes, I missed a huge opportunity</span><span class="option" onclick="endGame(true, 50, \'You made the right call by staying out of trouble, even though the exchange was still compromised.\')">No, I made the right call by staying out of trouble</span>';
-				score += points;
-				scoreDisplay.innerHTML = `Score: ${score}`;
-			} else if (choice === 4) {
-				gameText.innerHTML = "You tried to cover your tracks and launder the stolen assets, but the authorities eventually caught up with you. You were arrested and sentenced to 15 years in prison.";
-				endGame(false, score + points, 'Your actions led to severe consequences, and you received a lengthy prison sentence.');
-			} else if (choice === 5) {
-				gameText.innerHTML = "You negotiated with the exchange and returned the stolen assets in exchange for a reduced sentence. You were sentenced to 3 years in prison and fined $1 million.";
-				endGame(true, score + points, 'You made the best of a bad situation and received a reduced sentence for your cooperation.');
-			}
-		}
-
-		function endGame(success, finalScore, consequence) {
-			const gameText = document.getElementById('game-text');
-			const options = document.getElementById('options');
-			const scoreDisplay = document.getElementById('score');
-
-			if (success) {
-				gameText.innerHTML = "Congratulations! You navigated the crypto heist scenario successfully.";
-			} else {
-				gameText.innerHTML = "Game over! Your actions led to consequences.";
-			}
-
-			gameText.innerHTML += `<br><br>${consequence}`;
-
-			options.innerHTML = '';
-			scoreDisplay.innerHTML = `Final Score: ${finalScore}`;
-		}
-	</script>
-</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yehia Salem — Creative Portfolio</title>
+    <meta name="description" content="Portfolio of Yehia Hatem Salah Salem — multidisciplinary designer, creative technologist, and dual-degree student at the British University in Egypt." />
+    <script>
+      (function() {
+        const r = sessionStorage.getItem('redirect');
+        if (r && r !== window.location.href) {
+          sessionStorage.removeItem('redirect');
+          window.history.replaceState(null, null, r);
+        }
+        const q = window.location.search;
+        if (q.startsWith('?p=')) {
+          const p = q.slice(3);
+          window.history.replaceState(null, null, window.location.pathname.replace(/\/$/, '') + p + window.location.hash);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
